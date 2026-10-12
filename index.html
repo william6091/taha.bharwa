@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Taha 🌙</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+      color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      padding: 40px 20px;
+    }
+
+    .stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .star {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .moon {
+      position: fixed;
+      top: 40px;
+      right: 50px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: -18px 8px 0 0 #f6e7b4;
+      filter: drop-shadow(0 0 15px rgba(246, 231, 180, 0.6));
+      z-index: 1;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 45px 35px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      text-align: center;
+      color: #f6e7b4;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeUp 1s forwards;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      color: #f6e7b4;
+      border-left: 3px solid #f6e7b4;
+      padding-left: 15px;
+    }
+
+    .dua {
+      text-align: center;
+      font-weight: 400;
+      color: #ffe9f0;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      .card { padding: 30px 22px; }
+      .moon { width: 55px; height: 55px; right: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="moon"></div>
+
+  <div class="card">
+    <h1>For Taha 🌙</h1>
+
+    <p>There are some people who quietly become special without even trying. You are one of those people.</p>
+
+    <p>I don't know if you realize how beautiful your presence is. Your kindness, your smile, the way you carry yourself, and the little things you probably don't even notice... they matter more than you know.</p>
+
+    <p class="quote">"Some people enter your life as a simple friendship, and somehow become a beautiful part of your thoughts."</p>
+
+    <p>I respect you, your values, your faith, and the person you are. So I don't want to rush anything or make you uncomfortable.</p>
+
+    <p>I just wanted you to know that somewhere in this world, there is someone who genuinely wishes the best for you, quietly smiles when thinking about you, and hopes that life always treats you gently.</p>
+
+    <p>Maybe one day I'll have the courage to say everything properly. Until then, I'll simply be grateful that I got to know someone as wonderful as you.</p>
+
+    <p class="dua">May Allah always keep you happy, protected, and close to everything that is good for you. 🤍</p>
+  </div>
+
+  <script>
+    // Twinkling stars
+    const starsBox = document.getElementById('stars');
+    for (let i = 0; i < 150; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 2.5 + 0.5;
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.animationDelay = Math.random() * 3 + 's';
+      starsBox.appendChild(s);
+    }
+
+    // Paragraphs appear one by one
+    document.querySelectorAll('.card p').forEach((p, i) => {
+      p.style.animationDelay = (0.6 + i * 0.8) + 's';
+    });
+  </script>
+</body>
+</html>
